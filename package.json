@@ -1,8 +1,9 @@
 {
     "name": "vyper-client-ts",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "A Typescript SDK for the Vyper API",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "build": "tsc",
         "test": "jest"
