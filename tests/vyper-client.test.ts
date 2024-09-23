@@ -746,6 +746,7 @@ describe('VyperClient', () => {
     describe('getTokenPairs', () => {
         const params = {
             chainIds: '1,56',
+            tokenTypes: 'type1,type2',
             liquidityMin: 1000,
             page: 1,
         };

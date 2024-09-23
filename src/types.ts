@@ -182,3 +182,30 @@ export interface ChainAction {
     bondingCurvePercentage?: number;
     botUsed?: string;
 }
+
+export interface TokenPairsParams {
+    atLeastOneSocial?: boolean;
+    buysMax?: number;
+    buysMin?: number;
+    chainIds?: string | number[];
+    freezeAuthDisabled?: boolean;
+    initialLiquidityMax?: number;
+    initialLiquidityMin?: number;
+    interval?: string;
+    liquidityMax?: number;
+    liquidityMin?: number;
+    lpBurned?: boolean;
+    marketCapMax?: number;
+    marketCapMin?: number;
+    mintAuthDisabled?: boolean;
+    page?: number;
+    sellsMax?: number;
+    sellsMin?: number;
+    sorting?: string;
+    swapsMax?: number;
+    swapsMin?: number;
+    tokenTypes?: string | string[];
+    top10Holders?: boolean;
+    volumeMax?: number;
+    volumeMin?: number;
+}

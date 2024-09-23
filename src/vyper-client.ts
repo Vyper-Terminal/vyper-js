@@ -13,6 +13,7 @@ import {
     WalletPnL,
     TokenPairs,
     TokenHolder,
+    TokenPairsParams,
 } from './types';
 import {
     VyperApiError,
@@ -285,36 +286,25 @@ export class VyperClient {
         return response.data;
     }
 
-    async getTokenPairs(params: {
-        atLeastOneSocial?: boolean;
-        buysMax?: number;
-        buysMin?: number;
-        chainIds?: string;
-        freezeAuthDisabled?: boolean;
-        initialLiquidityMax?: number;
-        initialLiquidityMin?: number;
-        interval?: string;
-        liquidityMax?: number;
-        liquidityMin?: number;
-        lpBurned?: boolean;
-        marketCapMax?: number;
-        marketCapMin?: number;
-        mintAuthDisabled?: boolean;
-        page?: number;
-        sellsMax?: number;
-        sellsMin?: number;
-        sorting?: string;
-        swapsMax?: number;
-        swapsMin?: number;
-        tokenTypes?: string;
-        top10Holders?: boolean;
-        volumeMax?: number;
-        volumeMin?: number;
-    }): Promise<TokenPairs> {
+    async getTokenPairs(params: TokenPairsParams): Promise<TokenPairs> {
+        const formattedParams: Record<string, any> = { ...params };
+
+        if (params.chainIds) {
+            formattedParams.chainIds = Array.isArray(params.chainIds)
+                ? params.chainIds.join(',')
+                : params.chainIds;
+        }
+
+        if (params.tokenTypes) {
+            formattedParams.tokenTypes = Array.isArray(params.tokenTypes)
+                ? params.tokenTypes.join(',')
+                : params.tokenTypes;
+        }
+
         const response = await this.request<TokenPairs>(
             'GET',
             '/token/pairs',
-            params
+            formattedParams
         );
         return response.data;
     }
