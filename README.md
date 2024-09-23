@@ -2,7 +2,7 @@
 
 ![Vyper](https://images.vyper.trade/0000/vyper-header)
 
-A TypeScript SDK for interacting with the [Vyper API](https://build.vyper.trade/). This library allows developers to integrate Vyper's http and websocket api into their Python applications with ease.
+A TypeScript SDK for interacting with the [Vyper API](https://build.vyper.trade/). This library allows developers to integrate Vyper's http and websocket api into their TypeScript applications with ease.
 
 ## Table of Contents
 
