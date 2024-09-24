@@ -643,7 +643,7 @@ describe('VyperClient', () => {
             ]);
             expect(axios.request).toHaveBeenCalledWith({
                 method: 'GET',
-                url: '/wallet/holdings',
+                url: '/api/v1/wallet/holdings',
                 params: { walletAddress, chainID: chainId },
             });
         });
@@ -689,7 +689,7 @@ describe('VyperClient', () => {
             });
             expect(axios.request).toHaveBeenCalledWith({
                 method: 'GET',
-                url: '/wallet/aggregated-pnl',
+                url: '/api/v1/wallet/aggregated-pnl',
                 params: { walletAddress, chainID: chainId },
             });
         });
@@ -737,7 +737,7 @@ describe('VyperClient', () => {
             });
             expect(axios.request).toHaveBeenCalledWith({
                 method: 'GET',
-                url: '/wallet/pnl',
+                url: '/api/v1/wallet/pnl',
                 params: { walletAddress, marketID: marketId, chainID: chainId },
             });
         });
@@ -888,7 +888,7 @@ describe('VyperClient', () => {
             });
             expect(axios.request).toHaveBeenCalledWith({
                 method: 'GET',
-                url: '/token/pairs',
+                url: '/api/v1/token/pairs',
                 params: params,
             });
         });

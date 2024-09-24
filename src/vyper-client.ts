@@ -255,7 +255,7 @@ export class VyperClient {
     ): Promise<WalletHolding[]> {
         const response = await this.request<WalletHolding[]>(
             'GET',
-            '/wallet/holdings',
+            '/api/v1/wallet/holdings',
             { walletAddress, chainID: chainId }
         );
         return response.data;
@@ -267,7 +267,7 @@ export class VyperClient {
     ): Promise<WalletAggregatedPnL> {
         const response = await this.request<WalletAggregatedPnL>(
             'GET',
-            '/wallet/aggregated-pnl',
+            '/api/v1/wallet/aggregated-pnl',
             { walletAddress, chainID: chainId }
         );
         return response.data;
@@ -278,11 +278,15 @@ export class VyperClient {
         marketId: string,
         chainId: number
     ): Promise<WalletPnL> {
-        const response = await this.request<WalletPnL>('GET', '/wallet/pnl', {
-            walletAddress,
-            marketID: marketId,
-            chainID: chainId,
-        });
+        const response = await this.request<WalletPnL>(
+            'GET',
+            '/api/v1/wallet/pnl',
+            {
+                walletAddress,
+                marketID: marketId,
+                chainID: chainId,
+            }
+        );
         return response.data;
     }
 
@@ -303,7 +307,7 @@ export class VyperClient {
 
         const response = await this.request<TokenPairs>(
             'GET',
-            '/token/pairs',
+            '/api/v1/token/pairs',
             formattedParams
         );
         return response.data;
