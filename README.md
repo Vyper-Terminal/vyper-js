@@ -6,18 +6,18 @@ A TypeScript SDK for interacting with the [Vyper API](https://build.vyper.trade/
 
 ## Table of Contents
 
-- [Vyper API TypeScript SDK](#vyper-api-typescript-sdk)
-  - [Table of Contents](#table-of-contents)
-  - [Installation](#installation)
-    - [Using npm:](#using-npm)
-    - [Using pnpm:](#using-pnpm)
-    - [Using yarn:](#using-yarn)
-  - [Quick Start](#quick-start)
-  - [Usage](#usage)
-    - [Client Initialization](#client-initialization)
-    - [REST API Example](#rest-api-example)
-    - [WebSocket API Example](#websocket-api-example)
-  - [API Documentation](#api-documentation)
+-   [Vyper API TypeScript SDK](#vyper-api-typescript-sdk)
+    -   [Table of Contents](#table-of-contents)
+    -   [Installation](#installation)
+        -   [Using npm:](#using-npm)
+        -   [Using pnpm:](#using-pnpm)
+        -   [Using yarn:](#using-yarn)
+    -   [Quick Start](#quick-start)
+    -   [Usage](#usage)
+        -   [Client Initialization](#client-initialization)
+        -   [REST API Example](#rest-api-example)
+        -   [WebSocket API Example](#websocket-api-example)
+    -   [API Documentation](#api-documentation)
 
 ## Installation
 
@@ -111,7 +111,7 @@ wsClient
     .connect(FeedType.TOKEN_EVENTS)
     .then(() => {
         return wsClient.subscribe(FeedType.TOKEN_EVENTS, {
-            action: 'subscribe',
+            action: SubscriptionMessageType.SUBSCRIBE,
             types: [SubscriptionType.PUMPFUN_TOKENS],
         });
     })
